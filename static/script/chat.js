@@ -5,7 +5,7 @@ var textArea = document.getElementById("messageToBeSent")
 var messageStringLia =
 '<div class="d-flex justify-content-start mb-4">'+
 '<div class="img_cont_msg">'+
-'<img src="/home/paul/sublimeText/chat/images/logoLIA.png" class="rounded-circle user_img_msg">'+
+'<img src = "static/images/logoLIA.png" class="rounded-circle user_img_msg">'+
 '</div>'+
 '<div class="msg_cotainer">'+
 'XXXXX'+
@@ -23,7 +23,7 @@ var messageStringUser =
 '</div>';
 
 
-bouton.addEventListener("click", add_message);
+// bouton.addEventListener("click", add_message);
 
 function add_message() {
 
@@ -33,12 +33,32 @@ function add_message() {
 	var messageContent = textArea.value;
     
     var message = document.createElement("div");
-    finalString = messageLIAUser.replace("XXXXX", messageContent)
+    finalString = messageStringUser.replace("XXXXX", messageContent)
     message.innerHTML = finalString
 
     
     messages.appendChild(message)
     textArea.value='';
+    updateScroll()
+}
+
+function add_message_user(msg_user){
+    var message = document.createElement("div");
+    finalString = messageStringUser.replace("XXXXX", msg_user)
+    message.innerHTML = finalString
+
+    
+    messages.appendChild(message)
+    updateScroll()
+}
+
+function add_message_bot(msg_bot){
+    var message = document.createElement("div");
+    finalString = messageStringLia.replace("XXXXX", msg_bot)
+    message.innerHTML = finalString
+
+    
+    messages.appendChild(message)
     updateScroll()
 }
 
@@ -57,4 +77,4 @@ function onTestChange() {
     }
 }
 
-  
+      

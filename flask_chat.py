@@ -24,14 +24,12 @@ def messageReceived(methods=['GET', 'POST']):
     print('message was received!!!')
 
 # Event handler with socket.on decorator
-@socketio.on('chat_event')
+@socketio.on('event_chat_input')
 def handler_event(json, methods=['GET', 'POST']):
-	response = chatbot(json.get('message'))
+	response = chatbot(json.get('user_message'))
 	# print('received the event: '+ str(json))
-	json = { 
-		"message" : response
-	}
-	socketio.emit('chat_response', json, callback=messageReceived)
+	json['bot_message'] = response
+	socketio.emit('event_chat_output', json, callback=messageReceived)
 
 # Helps easy debug by running python from command line
 if(__name__ == '__main__'):
