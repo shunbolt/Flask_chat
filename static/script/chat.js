@@ -8,7 +8,7 @@ var messageStringLia =
 '<img src="/home/paul/sublimeText/chat/images/logoLIA.png" class="rounded-circle user_img_msg">'+
 '</div>'+
 '<div class="msg_cotainer">'+
-'I am looking for your next templates'+
+'XXXXX'+
 '</div>'+
 '</div>';
 
@@ -33,7 +33,7 @@ function add_message() {
 	var messageContent = textArea.value;
     
     var message = document.createElement("div");
-    finalString = messageStringUser.replace("XXXXX", messageContent)
+    finalString = messageLIAUser.replace("XXXXX", messageContent)
     message.innerHTML = finalString
 
     
