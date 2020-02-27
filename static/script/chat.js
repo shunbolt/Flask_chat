@@ -23,7 +23,7 @@ var messageStringUser =
 '</div>';
 
 
-// bouton.addEventListener("click", add_message);
+/* bouton.addEventListener("click", add_message);
 
 function add_message() {
 
@@ -41,7 +41,7 @@ function add_message() {
     textArea.value='';
     updateScroll()
 }
-
+*/
 function add_message_user(msg_user){
     var message = document.createElement("div");
     finalString = messageStringUser.replace("XXXXX", msg_user)
@@ -66,6 +66,7 @@ function updateScroll(){
     messages.scrollTop = messages.scrollHeight;
 }
 
+/*
 function onTestChange() {
     var key = window.event.keyCode;
 
@@ -76,5 +77,5 @@ function onTestChange() {
         return false;
     }
 }
-
+*/
       
