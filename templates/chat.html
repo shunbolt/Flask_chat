@@ -78,23 +78,38 @@
 		        // Socket behavior on event 'connect'
 		        socket.on('connect', function() {
 		          // jQuery that searches for the first "MessagetobeSent" context
-		        $("#send").click(function( e ) {
-		            // Checks if Enter key has been entered :
-		            //if((e.keyCode || e.which) == 13){
-		                // Prevents from submitting the form 
-		                e.preventDefault()
-		                // Input message as variable
-		                let user_input = $("#messageToBeSent").val()
-		                // Prints message
-		                add_message_user(user_input)
-		                // Sends message as 'event_chat_input'
-		                socket.emit( 'event_chat_input', {
-		                  "bot_message"  : "",
-		                  "user_message" : user_input
-		                })
-		                $( '#messageToBeSent' ).val( '' ).focus()
-		            // }
-		          })
+			        $("#send").click(function( e ) {
+			                // Prevents from submitting the form 
+			                e.preventDefault()
+			                // Input message as variable
+			                let user_input = $("#messageToBeSent").val()
+			                // Prints message
+			                add_message_user(user_input)
+			                // Sends message as 'event_chat_input'
+			                socket.emit( 'event_chat_input', {
+			                  "bot_message"  : "",
+			                  "user_message" : user_input
+			                })
+			                $( '#messageToBeSent' ).val( '' ).focus()
+			            // }
+			        })
+			        $("#messageToBeSent").keypress(function(e){
+			        	// Checks if Enter key has been entered :
+			        	if((e.keyCode || e.which) == 13){
+			        		// Prevents from submitting the form 
+			                e.preventDefault()
+			                // Input message as variable
+			                let user_input = $("#messageToBeSent").val()
+			                // Prints message
+			                add_message_user(user_input)
+			                // Sends message as 'event_chat_input'
+			                socket.emit( 'event_chat_input', {
+			                  "bot_message"  : "",
+			                  "user_message" : user_input
+			                })
+			                $( '#messageToBeSent' ).val( '' ).focus()
+			        	}
+			        })
 		        })
 		        // Socket behavior on event 'event_chat_output'
 		        socket.on('event_chat_output', function( msg ) {
