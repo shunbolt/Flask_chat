@@ -34,8 +34,10 @@
 								</div>
 							</div> 
 						</div>
+
 						<div class="card-body msg_card_body" id="messages">
 							<div class="d-flex justify-content-start mb-4">
+								<!--
 								<div class="img_cont_msg">
 									<img src ="{{ url_for('static', filename = 'images/logoLIA.png')}} " class="rounded-circle user_img_msg">
 								</div>
@@ -43,7 +45,16 @@
 									Salut, moi c'est Lia. Je suis un chatbot qui a pour but de t'aider à signaler toute situation de harcèlement dont tu es victime ou témoin.
 								</div>
 							</div>
-							
+							<div class="d-flex justify-content-start mb-4">
+								<div class="img_cont_msg">
+									<img src ="{{ url_for('static', filename = 'images/logoLIA.png')}} " class="rounded-circle user_img_msg">
+								</div>
+								<div class="msg_cotainer">
+									Avant de commencer, peux-tu me donner le nom de la personne qui subit le harcèlement ? Si c'est toi, tu peux me donner ton nom.
+								</div>
+								-->
+							</div>
+
 						</div>
 						<div class="card-footer">
 							<div class="input-group">
@@ -77,6 +88,7 @@
 
 		        // Socket behavior on event 'connect'
 		        socket.on('connect', function() {
+		        	socket.emit('event_chat_connect')
 		          // jQuery that searches for the first "MessagetobeSent" context
 			        $("#send").click(function( e ) {
 			                // Prevents from submitting the form 

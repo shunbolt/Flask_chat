@@ -1,5 +1,6 @@
 import Text_analysis
 
+
 captions = {
     "S1": "Salut, moi c'est Lia, je suis un robot qui a été conçu dans le but de venir en aide aux élèves victimes de "
           "harcèlement à l'école. Je tiens tout d'abord à te féliciter de venir me parler !",
