@@ -26,12 +26,35 @@ flag = True
 json_input = ''
 
 def HTMLBot_response(answer):
-    time.sleep(3)
+    time.sleep(2)
     socketio.emit('event_chat_output', {
         "bot_message": answer,
         "user_message": ""
     })
 
+def HTMLBot_response_list(list_answer):
+    time.sleep(2)
+    print(list_answer)
+    socketio.emit('event_chat_output_list', {
+        "school1": {
+            "name": list_answer[0][1],
+            "street": list_answer[0][2],
+            "code": list_answer[0][3],
+            "city": list_answer[0][4]
+        },
+        "school2": {
+            "name": list_answer[1][1],
+            "street": list_answer[1][2],
+            "code": list_answer[1][3],
+            "city": list_answer[1][4]
+        },
+        "school3": {
+            "name": list_answer[2][1],
+            "street": list_answer[2][2],
+            "code": list_answer[2][3],
+            "city": list_answer[2][4]
+        }
+    })
 
 def HTMLUser_input():
     global flag
@@ -118,7 +141,9 @@ class State:
     def profiling(self):
         tmp = Text_analysis.validate(self.ans)
         if tmp:
-            tmp = input("Peux-tu me raconter plus en détail ?\n >>> ")
+            HTMLBot_response("Peux-tu me raconter plus en détail ?")
+            tmp = HTMLUser_input()
+            # tmp = input("Peux-tu me raconter plus en détail ?\n >>> ")
         else:
             print("ok")
 
@@ -129,9 +154,12 @@ class State:
             set_name(Text_analysis.retreive_name(self.ans))
         elif self.f == "school":
             schools = Text_analysis.find_school(self.ans)
-            print(schools)
-            tmp = input("entre le numéro de ton école dans cette liste s'il te plaît ")
-            set_school(schools[int(tmp)][1])
+            # print(schools)
+            HTMLBot_response_list(schools)
+            # tmp = input("entre le numéro de ton école dans cette liste s'il te plaît ")
+            HTMLBot_response("Entre le numéro de ton école dans cette liste s'il te plaît")
+            tmp = HTMLUser_input()
+            set_school(schools[int(tmp)-1][1])
         elif self.f == "classe":
             set_classe(self.ans)
         elif self.f == "profiling":
@@ -157,21 +185,21 @@ class State:
 # S1 = State(statenb, caption, possible_next_states, TA_function)
 
 captions = {
-    "S1": "Salut, moi c'est Lia, je suis un robot qui a été conçu dans le but de venir en aide aux élèves victimes de "
+    "S1": "Salut, moi c'est Lia, je suis un chatbot qui a été conçu dans le but de venir en aide aux élèves victimes de"
           "harcèlement à l'école. Je tiens tout d'abord à te féliciter de venir me parler !",
-    "S2": "Avant de commencer, peux-tu me donner le nom de la personne qui subit le harcèlement ? Si c'est toi, "
-          "tu peux me donner ton nom. ",
+    "S2": "Avant de commencer, peux-tu me donner le nom de la personne qui subit des ennuis ? Si c'est toi, "
+          "tu peux me donner ton nom.",
     "S3": "Oh, je vois, tu t'appelles FULL_NAME, c'est bien ça ?",
     "S4": "Ok, FIRST_NAME, dans quel établissement scolaire se passent les faits ? J'aurai besoin du nom de "
           "l'établissement et de la ville dans laquelle il se situe",
-    "S5": "ok, tu peux m'écrire ton prénom à nouveau ?",
+    "S5": "Ok, Peux-tu m'écrire ton prénom à nouveau ?",
     "S6": "Peux-tu me confirmer que ton établissement est SCHOOL ?",
-    "S7": "Peux tu me dire dans quelle classe tu es ?",
-    "S8": "donc résumons, tu es à SCHOOL dans la classe CLASS. C'est cela FIRST_NAME ?",
+    "S7": "Peux-tu me dire dans quelle classe tu es ?",
+    "S8": "Donc résumons : Tu es à SCHOOL en classe de CLASS. C'est cela FIRST_NAME ?",
     "S9": "Es-tu prêt à répondre à des questions plus précises ?",
-    "S10": "ok FIRST_NAME, quand es-ce que tes ennuis ont commencés ?",
-    "S11": "on va te poser une petite série de questions, je t'invite à répondre par oui ou non à chacune d'entre "
-           "elles. On pourra aussi te demander plus de détails.",
+    "S10": "Ok FIRST_NAME, quand es-ce que tes ennuis ont commencés ?",
+    "S11": "On va te poser une petite série de questions, je t'invite à répondre par oui ou non à chacune d'entre "
+           "elles. On pourra aussi te laisser détailler tes problèmes si nécessaire.",
     "S12": "Est-ce que quelqu'un t'a frappé ?",
     "S13": "Est-ce que tu te fais insulter ?",
     "S14": "Est-ce que que tu te fais harceler sur internet ou par sms ?",
@@ -179,12 +207,12 @@ captions = {
     "S16": "En as-tu déjà parlé autour de toi ?",
     "S17": "Est-ce que tu te sens mal dans ta classe ?",
     "S18": "Est-ce qu'un adulte s'en prend à toi à l'école ?",
-    "S19": "Est-ce que tu veux me donner l'identité des harceleurs ?",
-    "S20": "Acceptes-tu que nous envoyons le contenu de cette conversation aux personnes compétentes afin qu'elles "
+    "S19": "Est-ce que tu souhaites me donner l'identité des harceleurs ?",
+    "S20": "Acceptes-tu que nous envoyons le contenu de cette conversation aux autorités compétentes afin qu'elles "
            "soient prévenues de ce qu'il t'arrive ?",
-    "S21": "Dans tous les cas, je te remercie pour cette conversation FIRST_NAME. Tu as eu raison de venir me parler, "
+    "S21": "Je te remercie pour cette conversation FIRST_NAME. Tu as eu raison de venir me parler, "
            "c'est déjà un grand pas en avant. Tu peux contacter le 3020 par téléphone si tu souhaites discuter de ce "
-           "genre de problèmes avec un humain qualifié et discret. Bonne continuation ! "
+           "genre de problèmes avec une personne qualifiée en toute discrétion. Surtout n'abandonnes pas ! "
 
 }
 

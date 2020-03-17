@@ -103,6 +103,8 @@
 			                  "user_message" : user_input
 			                })
 			                $( '#messageToBeSent' ).val( '' ).focus()
+			                // Puts a loading icon from LIA
+							display_loading_bot()
 			            // }
 			        })
 			        $("#messageToBeSent").keypress(function(e){
@@ -120,15 +122,24 @@
 			                  "user_message" : user_input
 			                })
 			                $( '#messageToBeSent' ).val( '' ).focus()
+			                // Puts a loading icon from LIA
+			                display_loading_bot()
 			        	}
 			        })
 		        })
 		        // Socket behavior on event 'event_chat_output'
 		        socket.on('event_chat_output', function( msg ) {
+		        remove_loading_bot()
 		          // Render the message on html page
 		          add_message_bot(msg.bot_message)
 		        })
 
+		        // Socket behavior on event 'event_chat_output_list'
+		        socket.on('event_chat_output_list', function (json){
+		        remove_loading_bot()
+		        	// Render the message by reading JSON file
+		        	add_message_bot_list(json)
+		        })
 		</script>
 
 	</body>
