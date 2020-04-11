@@ -26,14 +26,15 @@ flag = True
 json_input = ''
 
 def HTMLBot_response(answer):
-    time.sleep(2)
+    # time.sleep(2)
+    print("Sending response to " + request.sid)
     socketio.emit('event_chat_output', {
         "bot_message": answer,
         "user_message": ""
     }, room=request.sid)
 
 def HTMLBot_response_list(list_answer):
-    time.sleep(2)
+    # time.sleep(2)
     print(list_answer)
     socketio.emit('event_chat_output_list', {
         "school1": {
@@ -60,6 +61,7 @@ def HTMLUser_input():
     global flag
     global json_input
 
+    print("Waiting input from " + request.sid)
     flag = True
     json_input = ''
 
