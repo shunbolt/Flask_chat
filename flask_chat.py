@@ -1,5 +1,5 @@
 # Libraries imports
-from flask import Flask, render_template
+from flask import Flask, render_template , request
 from flask_socketio import SocketIO
 # from chat import chatbot
 import Text_analysis
@@ -30,7 +30,7 @@ def HTMLBot_response(answer):
     socketio.emit('event_chat_output', {
         "bot_message": answer,
         "user_message": ""
-    })
+    }, room=request.sid)
 
 def HTMLBot_response_list(list_answer):
     time.sleep(2)
@@ -54,7 +54,7 @@ def HTMLBot_response_list(list_answer):
             "code": list_answer[2][3],
             "city": list_answer[2][4]
         }
-    })
+    }, room=request.sid)
 
 def HTMLUser_input():
     global flag
@@ -241,10 +241,20 @@ S21 = State(21, captions.get("S21"), "END", "none", input=False)
 state_table = [S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19, S20, S21]
 
 
+server_variables = {}
+
 @socketio.on('event_chat_connect')
 def state_start(methods=['GET', 'POST']):
+    if request.sid not in server_variables.keys():
+        server_variables[request.sid] = {'sid' : request.sid, 'stats' : 'connected'}
+    print(str(request.sid) + '=> Client Connected ')
     S1.execute()
 
+@socketio.on('event_chat_disconnect')
+def state_end(methods=['GET', 'POST']):
+    if request.sid in server_variables.keys():
+        server_variables[request.sid]['stats'] = 'disconnected'
+    print(str(request.sid) + '=> Client Disconnected ')
 
 ######## End of Paul's code ######
 
