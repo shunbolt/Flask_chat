@@ -262,4 +262,5 @@ def state_end(methods=['GET', 'POST']):
 
 # Helps easy debug by running python from command line
 if (__name__ == '__main__'):
-    app.run(debug=True)
+    import thread
+    thread.start_new_thread(lambda: socketio.run(app), ())
