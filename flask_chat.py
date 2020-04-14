@@ -19,6 +19,10 @@ socketio = SocketIO(app)
 
 # Default route
 @app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/chatbot')
 def chat():
     return render_template('chat.html')
 
@@ -262,5 +266,4 @@ def state_end(methods=['GET', 'POST']):
 
 # Helps easy debug by running python from command line
 if (__name__ == '__main__'):
-    import thread
-    thread.start_new_thread(lambda: socketio.run(app), ())
+    app.run(debug=True)

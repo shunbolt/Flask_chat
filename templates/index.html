@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <title>LIA - le chatbot qui lutte contre le harcèlement</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Optional JavaScript -->
+  <!-- jQuery, Popper.js, Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <!-- Custom styles -->
+  <link href="style_site.css" rel="stylesheet">
+  <!-- Icon -->
+  <link rel="icon" type="image/icon" href="images/icons/iconLIA.ico" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Abel|Nunito+Sans|Sen&display=swap" rel="stylesheet">
+  <!-- Animate On Scroll Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Fontawesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <!-- Background -->
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+
+  <button type="button" class="btn btn-top hide" title="Retourner en haut">
+    <i class="fas fa-arrow-up" alt="Retourner en haut"></i>
+  </button>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light nav-expended fixed-top linear-gradient">
+    <div class="div-nav offset-2 col-8 d-flex bd-highlight">
+      <div class="mr-auto bd-highlight">
+        <a class="top logo" href="#">
+          <img src="images/logos/logoLIA_vg_C.png" class="logo d-inline-block align-center" alt="Logo LIA"></a>
+      </div>
+      <div class="navbar-menu bd-highlight align-self-center">
+
+
+        <div class="collapse navbar-collapse" id="navbarToggler">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#projet">Projet</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#equipe">Equipe</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#partenaires">Partenaires</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#integration">Intégration</a>
+            </li>
+          </ul>
+        </div>
+
+        <button class="btn navbar-toggler align-self-center" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+          <i id="rotatable" class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container col-8 justify-content-center text-center">
+    <!-- Citation -->
+    <div class="envlp">
+      <div class="row quote">
+        <div class="col-6 m-auto">
+          <blockquote class="blockquote">
+            <p class="mb-0">Le courage n'est pas l'absence de peur, mais la capacité de vaincre ce qui fait peur.</p>
+            <footer class="blockquote-footer">Nelson Mandela, <cite title="Source Title">Un long chemin vers la liberté</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- Video -->
+      <div class="row justify-content-center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Rj2VHP-yfoI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- Le projet -->
+    <div class="envlp" id="projet">
+      <div class="row justify-content-center">
+        <h2>Le projet</h2>
+      </div>
+      <div class="row">
+        <div class="col-10 m-auto">
+          <p class="corps" data-aos="fade-left" data-aos-duration="1500">
+            <b>LIA c’est quoi ?</b><br>
+            LIA c'est avant tout un projet étudiant, un chatbot conçu pour les élèves du secondaire, victimes ou témoins de harcèlement scolaire.
+            LIA se définit comme un outil supplémentaire de communication, d'échange, de transmission et signalement de problèmes entre les élèves et les
+            autorités compétentes.</p>
+          <p class="corps" data-aos="fade-right" data-aos-duration="1500">
+            <b>Pourquoi avoir fait ce projet ?</b><br>
+            La grande majorité des adolescents se servent et utilisent de plus en plus d’applications internet ou mobiles pour communiquer (Réseaux sociaux – SMS – Chat).
+            De plus, un adolescent n’a pas toujours l’aisance pour parler de ses problèmes face à un adulte souvent par peur de représailles ou de jugement de leur part.<br>
+            De ces problématiques, est nés LIA, une réponse combinant ces deux aspects : à la fois une méthode de chat similaire à ce qu’utilise déjà l'adolescent et
+            un engagement auprès de lui sans soupçon ou préjugé humain qui pourrait le troubler.</p>
+          <p class="corps" data-aos="fade-left" data-aos-duration="1500">
+            <b>Comment cela fonctionne ?</b><br>
+            &emsp;1. Le chatbot échange avec l’adolescent autour des problèmes qu’il rencontre ou observe à l’école ;<br>
+            &emsp;2. Le bot génère une fiche et une alerte à travers les informations collectées durant la discussion ;<br>
+            &emsp;3. La fiche est transmise aux autorités compétentes pour qu’ils puissent suivre le problème.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- L'équipe -->
+    <div class="envlp" id="equipe">
+      <div class="row justify-content-center">
+        <h2>L'équipe</h2>
+      </div>
+      <div class="row">
+        <div class="col-10 m-auto">
+          <img data-aos="flip-right" data-aos-duration="2000" src="images/avatars/avatar_Theo.png" width="150px" class="avatar" title="Theo Gaullier" />
+          <img data-aos="flip-right" data-aos-duration="2000" data-aos-delay="300" src="images/avatars/avatar_Maximilien.png" width="150px" class="avatar" title="Maximilien Dalban" />
+          <img data-aos="flip-left" data-aos-duration="2000" data-aos-delay="600" src="images/avatars/avatar_Antoine.png" width="150px" class="avatar" title="Antoine Auffray" />
+          <img data-aos="flip-right" data-aos-duration="2000" data-aos-delay="150" src="images/avatars/avatar_Paul.png" width="150px" class="avatar" title="Paul Basnier" />
+          <img data-aos="flip-right" data-aos-duration="2000" data-aos-delay="900" src="images/avatars/avatar_Yoann.png" width="150px" class="avatar" title="Yoann Torrado" />
+          <img data-aos="flip-left" data-aos-duration="2000" data-aos-delay="450" src="images/avatars/avatar_Raphael.png" width="150px" class="avatar" title="Raphael Tran" />
+          <img data-aos="flip-right" data-aos-duration="2000" src="images/avatars/avatar_Francois.png" width="150px" class="avatar" title="François Hervé" />
+          <img data-aos="flip-left" data-aos-duration="2000" data-aos-delay="600" src="images/avatars/avatar_Brenden.png" width="150px" class="avatar" title="Brenden Balane" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10 m-auto">
+          <p class="corps" data-aos="fade-up" data-aos-delay="150">
+            LIA est une équipe de huit étudiants ingénieurs au sein d’EFREI Paris. Notre équipe est composée d’étudiants en data science, en software engineering et
+            en cloud engineering qui se sont réunis dans le cadre de nos études pour créer une solution nouvelle et durable.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partenaires -->
+    <div class="envlp" id="partenaires">
+      <div class="row justify-content-center">
+        <h2>Partenaires</h2>
+      </div>
+      <div class="row">
+        <div class="col-10 m-auto">
+          <a>
+            <img src="images/logos/ac-paris.png" class="m-3" data-aos="fade-up" width="150px" title="Rectorat de Paris" /></a>
+          <a href="https://www.asso-hugo.fr/">
+            <img src="images/logos/hugo.png" class="m-3" data-aos="fade-up" data-aos-delay="300" width="150px" title="HUGO!" /></a>
+          <a href="https://www.gandi.net/fr">
+            <img src="images/logos/gandi.png" class="m-3" data-aos="fade-up" data-aos-delay="150" width="150px" title="Gandi" /></a>
+          <a>
+            <img src="images/logos/humanIT.png" class="m-3" data-aos="fade-up" data-aos-delay="450" width="150px" title="human'IT" /></a>
+          <a href="https://www.efrei.fr/">
+            <img src="images/logos/efrei.png" class="m-3" data-aos="fade-up" data-aos-delay="600" width="150px" title="EFREI Paris" /></a>
+          <p class="corps" data-aos="fade-up" data-aos-delay="850">
+            Nous remercions nos partenaires de nous aider dans ce projet, gandi.net et human’it pour l’apport matériel ainsi que
+            l’association Hugo et l’éducation nationale pour l’aide sur le plan social.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Intégration -->
+    <div class="envlp" id="integration">
+      <div class="row justify-content-center">
+        <h2>Intégration</h2>
+      </div>
+      <div class="row">
+        <div class="col-10 m-auto">
+          <p class="corps" data-aos="fade-up">
+            Pour intégrer notre chatbot à votre site rien de plus simple :
+            ajoutez l'iframe ci-dessous dans votre code. Pour cela il suffit d’intégrer la balise &lt;iframe&gt; dans votre document HTML.</p>
+
+          <!-- Code pour copier iframe -->
+          <div class="col-8 m-auto input-group mb-3" data-aos="fade-up">
+            <!-- A copier -->
+            <input class="form-control" id="copy"
+              value='&lt;iframe&gt; width="560" height="315" src="https://www.youtube.com/embed/WESOblQ_3bw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&lt;/iframe&gt;'>
+
+            <!-- Copier -->
+            <div class="input-group-append">
+              <span class="input-group-text p-0 px-2">
+                <button class="btn btn-copy p-0" data-clipboard-target="#copy" title="Copie le lien">
+                  <i class="far fa-copy" alt="Copie le lien"></i>
+                </button>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Remerciements -->
+    <div class="envlp" id="integration">
+      <div class="row justify-content-center">
+        <h2>Nos remerciments</h2>
+      </div>
+      <div class="row">
+        <div class="col-10 m-auto">
+          <p class="corps" data-aos="fade-up">
+            Nous tenions à remercier Mona Ginet pour le logo, Vinodha Balane pour avoir prêté sa voix dans la vidéo de présentation et enfin
+            Andreas Topp et Benoît Charroux pour leurs précieux conseils.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="card-footer d-flex justify-content-center">
+    <a class="nav-link" href="mentions_legales.html">
+      <p>Mentions légales</p>
+    </a>
+    <a href="index.html" class="mx-5">
+      <img src="images/logos/logoLIA_vg_NB.png" width="45px"></a>
+    <a class="nav-link" href="contact.html">
+      <p>Nous contacter</p>
+    </a>
+  </div>
+
+  <!-- Animate On Scroll Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- ClipboardJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+  <!-- Fontawesome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+  <!-- Mes fonctions -->
+  <script src="script_site.js"></script>
+</body>
+
+</html>
