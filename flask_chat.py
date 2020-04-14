@@ -82,6 +82,7 @@ def HTMLUser_input():
         def read_input(json):
             global flag
             global json_input
+            print("Response received from " + request.sid)
 
 
             json_input = json['user_message']
@@ -274,4 +275,4 @@ def state_end(methods=['GET', 'POST']):
 
 # Helps easy debug by running python from command line
 if (__name__ == '__main__'):
-    app.run(debug=True)
+    app.run(debug=False)
