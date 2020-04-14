@@ -13,9 +13,9 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <!-- Custom styles -->
-  <link href="style_site.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href=" {{ url_for('static', filename = 'styles/style_site.css')}} ">
   <!-- Icon -->
-  <link rel="icon" type="image/icon" href="images/icons/iconLIA.ico" />
+  <link rel="icon" type="image/icon" href=" {{ url_for('static', filename = 'images/icons/iconLIA.ico')}} ">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Abel|Nunito+Sans|Sen&display=swap" rel="stylesheet">
   <!-- Animate On Scroll Library -->
@@ -38,8 +38,8 @@
   <nav class="navbar navbar-expand-lg navbar-light nav-expended fixed-top linear-gradient">
     <div class="div-nav offset-2 col-8 d-flex bd-highlight">
       <div class="mr-auto bd-highlight">
-        <a class="top logo" href="#">
-          <img src="images/logos/logoLIA_vg_C.png" class="logo d-inline-block align-center" alt="Logo LIA"></a>
+        <a class="top logo" href="/">
+          <img src="{{ url_for('static', filename = 'images/logos/logoLIA_vg_C.png')}}" class="logo d-inline-block align-center" alt="Logo LIA"></a>
       </div>
       <div class="navbar-menu bd-highlight align-self-center">
 
@@ -120,14 +120,14 @@
       </div>
       <div class="row">
         <div class="col-10 m-auto">
-          <img data-aos="flip-right" data-aos-duration="2000" src="images/avatars/avatar_Theo.png" width="150px" class="avatar" title="Theo Gaullier" />
-          <img data-aos="flip-right" data-aos-duration="2000" data-aos-delay="300" src="images/avatars/avatar_Maximilien.png" width="150px" class="avatar" title="Maximilien Dalban" />
-          <img data-aos="flip-left" data-aos-duration="2000" data-aos-delay="600" src="images/avatars/avatar_Antoine.png" width="150px" class="avatar" title="Antoine Auffray" />
-          <img data-aos="flip-right" data-aos-duration="2000" data-aos-delay="150" src="images/avatars/avatar_Paul.png" width="150px" class="avatar" title="Paul Basnier" />
-          <img data-aos="flip-right" data-aos-duration="2000" data-aos-delay="900" src="images/avatars/avatar_Yoann.png" width="150px" class="avatar" title="Yoann Torrado" />
-          <img data-aos="flip-left" data-aos-duration="2000" data-aos-delay="450" src="images/avatars/avatar_Raphael.png" width="150px" class="avatar" title="Raphael Tran" />
-          <img data-aos="flip-right" data-aos-duration="2000" src="images/avatars/avatar_Francois.png" width="150px" class="avatar" title="François Hervé" />
-          <img data-aos="flip-left" data-aos-duration="2000" data-aos-delay="600" src="images/avatars/avatar_Brenden.png" width="150px" class="avatar" title="Brenden Balane" />
+          <img data-aos="flip-right" data-aos-duration="2000" src="{{ url_for('static', filename = 'images/avatars/avatar_Theo.png')}}" width="150px" class="avatar" title="Theo Gaullier" />
+          <img data-aos="flip-right" data-aos-duration="2000" data-aos-delay="300" src="{{ url_for('static', filename = 'images/avatars/avatar_Maximilien.png')}}" width="150px" class="avatar" title="Maximilien Dalban" />
+          <img data-aos="flip-left" data-aos-duration="2000" data-aos-delay="600" src="{{ url_for('static', filename = 'images/avatars/avatar_Antoine.png')}}" width="150px" class="avatar" title="Antoine Auffray" />
+          <img data-aos="flip-right" data-aos-duration="2000" data-aos-delay="150" src="{{ url_for('static', filename = 'images/avatars/avatar_Paul.png')}}" width="150px" class="avatar" title="Paul Basnier" />
+          <img data-aos="flip-right" data-aos-duration="2000" data-aos-delay="900" src="{{ url_for('static', filename = 'images/avatars/avatar_Yoann.png')}}" width="150px" class="avatar" title="Yoann Torrado" />
+          <img data-aos="flip-left" data-aos-duration="2000" data-aos-delay="450" src="{{ url_for('static', filename = 'images/avatars/avatar_Raphael.png')}}" width="150px" class="avatar" title="Raphael Tran" />
+          <img data-aos="flip-right" data-aos-duration="2000" src="{{ url_for('static', filename = 'images/avatars/avatar_Francois.png')}}" width="150px" class="avatar" title="François Hervé" />
+          <img data-aos="flip-left" data-aos-duration="2000" data-aos-delay="600" src="{{ url_for('static', filename = 'images/avatars/avatar_Brenden.png')}}" width="150px" class="avatar" title="Brenden Balane" />
         </div>
       </div>
       <div class="row">
@@ -147,15 +147,15 @@
       <div class="row">
         <div class="col-10 m-auto">
           <a>
-            <img src="images/logos/ac-paris.png" class="m-3" data-aos="fade-up" width="150px" title="Rectorat de Paris" /></a>
+            <img src="{{ url_for('static', filename = 'images/logos/ac-paris.png')}}" class="m-3" data-aos="fade-up" width="150px" title="Rectorat de Paris" /></a>
           <a href="https://www.asso-hugo.fr/">
-            <img src="images/logos/hugo.png" class="m-3" data-aos="fade-up" data-aos-delay="300" width="150px" title="HUGO!" /></a>
+            <img src="{{ url_for('static', filename = 'images/logos/hugo.png')}}" class="m-3" data-aos="fade-up" data-aos-delay="300" width="150px" title="HUGO!" /></a>
           <a href="https://www.gandi.net/fr">
-            <img src="images/logos/gandi.png" class="m-3" data-aos="fade-up" data-aos-delay="150" width="150px" title="Gandi" /></a>
+            <img src="{{ url_for('static', filename = 'images/logos/gandi.png')}}" class="m-3" data-aos="fade-up" data-aos-delay="150" width="150px" title="Gandi" /></a>
           <a>
-            <img src="images/logos/humanIT.png" class="m-3" data-aos="fade-up" data-aos-delay="450" width="150px" title="human'IT" /></a>
+            <img src="{{ url_for('static', filename = 'images/logos/humanIT.png')}}" class="m-3" data-aos="fade-up" data-aos-delay="450" width="150px" title="human'IT" /></a>
           <a href="https://www.efrei.fr/">
-            <img src="images/logos/efrei.png" class="m-3" data-aos="fade-up" data-aos-delay="600" width="150px" title="EFREI Paris" /></a>
+            <img src="{{ url_for('static', filename = 'images/logos/efrei.png')}}" class="m-3" data-aos="fade-up" data-aos-delay="600" width="150px" title="EFREI Paris" /></a>
           <p class="corps" data-aos="fade-up" data-aos-delay="850">
             Nous remercions nos partenaires de nous aider dans ce projet, gandi.net et human’it pour l’apport matériel ainsi que
             l’association Hugo et l’éducation nationale pour l’aide sur le plan social.</p>
@@ -212,12 +212,12 @@
 
   <!-- Footer -->
   <div class="card-footer d-flex justify-content-center">
-    <a class="nav-link" href="mentions_legales.html">
+    <a class="nav-link" href="/mentions_legales">
       <p>Mentions légales</p>
     </a>
-    <a href="index.html" class="mx-5">
-      <img src="images/logos/logoLIA_vg_NB.png" width="45px"></a>
-    <a class="nav-link" href="contact.html">
+    <a href="/" class="mx-5">
+      <img src="{{ url_for('static', filename = 'images/logos/logoLIA_vg_NB.png')}}" width="45px"></a>
+    <a class="nav-link" href="/contact">
       <p>Nous contacter</p>
     </a>
   </div>
@@ -229,7 +229,7 @@
   <!-- Fontawesome -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
   <!-- Mes fonctions -->
-  <script src="script_site.js"></script>
+  <script src= "{{ url_for('static', filename = 'script/script_site.js')}}" ></script>
 </body>
 
 </html>

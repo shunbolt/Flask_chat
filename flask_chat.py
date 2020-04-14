@@ -26,6 +26,14 @@ def index():
 def chat():
     return render_template('chat.html')
 
+@app.route('/mentions_legales')
+def mentions():
+    return render_template('mentions_legales.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')    
+
 flag = True
 json_input = ''
 
