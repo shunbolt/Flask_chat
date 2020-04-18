@@ -1,4 +1,5 @@
 # Libraries imports
+import os
 from flask import Flask, render_template , request
 from state import LIA_response
 import time
@@ -22,6 +23,7 @@ def index():
 # route towards the chatbot
 @app.route('/chatbot')
 def chat():
+    
     return render_template('chat.html')
 
 # route towards legal mentions

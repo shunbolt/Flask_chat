@@ -120,6 +120,13 @@
 		                // Puts a loading icon from LIA
 						display_loading_bot()
 						// SECOND VERSION : GET METHOD
+						json_response = {
+							response: user_input,
+							state: val_state,
+							name : val_name,
+							classe : val_classe,
+							school : val_school,
+							school_infos : val_school_infos }
 						$.ajax({
 							type : "POST",
 							contentType: "application/json; charset=utf-8",

@@ -199,7 +199,7 @@ S18 = State(18, captions.get("S18"), 19, "none")
 S19 = State(19, captions.get("S19"), 20, "none")
 # Fin de bloc
 S20 = State(20, captions.get("S20"), 21, "none")
-S21 = State(21, captions.get("S21"), "END", "none", input=False)
+S21 = State(21, captions.get("S21"), 21, "none", input=False)
 
 S22 = State(22, captions.get("S22"), 6, "none",input=False)
 
