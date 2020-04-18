@@ -35,7 +35,6 @@ captions = {
            "genre de problèmes avec un adulte qualifié qui sera tout aussi discret. "
            "Tu peux également te rapporcher de l'association Hugo"
            "qui saura t'accompagner et te guider pour ton problème. Bon courage ! ",
-
     "S22": "Peux-tu sélectionner ton école dans la liste au dessus s'il te plait"
 }
 

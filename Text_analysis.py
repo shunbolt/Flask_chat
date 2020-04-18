@@ -49,7 +49,7 @@ def find_school_in_city(schools, message):
     return name.title()"""
 
 def retreive_name(message):
-	df = pd.read_csv("Logic/Prenoms.csv", usecols=[0])
+    df = pd.read_csv("Logic/Prenoms.csv", usecols=[0])
     splitted = message.split(' ')
     if len(splitted)<3:
         return message.title()
