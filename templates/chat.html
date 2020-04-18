@@ -1,6 +1,5 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -10,104 +9,66 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>LIA Chatbot</title>
+		<title>Chat</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-		<link rel="stylesheet" type="text/css" href=" {{ url_for('static', filename = 'styles/style.css')}} ">
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+		<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&display=swap" rel="stylesheet">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'styles/chat_LIA.css')}}">
 	</head>
-	<!--Coded With Love By Mutiullah Samim-->
 	<body>
-		<div class="row justify-content-center h-100">
-				<div class="col-md-8 col-xl-6 chat">
-					<div class="card">
-						<div class="card-header msg_head">
-							<div class="d-flex bd-highlight">
-								<div class="img_cont">
-									<img  src ="{{ url_for('static', filename = 'images/logoLIA.png')}} " class="rounded-circle user_img">
-									<span class="online_icon"></span>
-								</div>
-								<div class="user_info">
-									<span>Discussion avec LIA</span>
-								</div>
-							</div> 
-						</div>
-
-						<div class="card-body msg_card_body" id="messages">
-							<div class="d-flex justify-content-start mb-4">
-								<!--
-								<div class="img_cont_msg">
-									<img src ="{{ url_for('static', filename = 'images/logoLIA.png')}} " class="rounded-circle user_img_msg">
-								</div>
-								<div class="msg_cotainer">
-									Salut, moi c'est Lia. Je suis un chatbot qui a pour but de t'aider à signaler toute situation de harcèlement dont tu es victime ou témoin.
-								</div>
+		<div class="d-flex justify-content-center h-100">
+			<div class="col-md-8 col-xl-6 chat">
+				<div class="card">
+					<div class="card-body msg_card_body" id="messages">
+						<div class="d-flex justify-content-start mb-4">
+							<div class="img_cont_msg">
+								<img src="{{url_for('static', filename = 'images/logos/iconLIA_rond.png')}}" class="bot_img_msg">
 							</div>
-							<div class="d-flex justify-content-start mb-4">
-								<div class="img_cont_msg">
-									<img src ="{{ url_for('static', filename = 'images/logoLIA.png')}} " class="rounded-circle user_img_msg">
-								</div>
-								<div class="msg_cotainer">
-									Avant de commencer, peux-tu me donner le nom de la personne qui subit le harcèlement ? Si c'est toi, tu peux me donner ton nom.
-								</div>
-								-->
+							<div class="msg_container">
+								Salut, moi c'est Lia, je suis un robot qui a été conçu dans le but de venir en aide aux élèves victimes de harcèlement à l'école.
+								Je tiens tout d'abord à te féliciter de venir me parler !
 							</div>
-
 						</div>
-						<div class="card-footer">
-							<div class="input-group">
-								<!--<div class="input-group-append">
-									<span class="input-group-text attach_btn"><i class="fas fa-paperclip"></i></span>
-								</div> -->
-								<textarea name="" class="form-control type_msg" placeholder="écris ton message ici..." id=messageToBeSent ></textarea>
-								<div class="input-group-append">
- 									<span class="input-group-text send_btn" id="send"><i class="fas fa-location-arrow"></i></span>
- 									<!-- <button type="button" id="send">Click Me!</button>  -->
-								</div>
+						<div class="d-flex justify-content-start mb-4">
+							<div class="img_cont_msg">
+								<img src="{{url_for('static', filename = 'images/logos/iconLIA_rond.png')}}" class="bot_img_msg">
+							</div>
+							<div class="msg_container">
+								Avant de commencer, peux-tu me donner le nom de la personne qui subit le harcèlement ? Si c'est toi,
+								tu peux me donner ton nom.
+							</div>
+						</div>
+					</div>
+					<div class="card-footer">
+						<div class="input-group">
+							<textarea name="" class="form-control type_msg" placeholder="écris ton message ici..." id=messageToBeSent></textarea>
+							<div class="input-group-append">
+								<span class="input-group-text send_btn" id="send"><i class="fas fa-location-arrow"></i></span>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		
 		<script src= "{{ url_for('static', filename = 'script/chat.js')}}" ></script>
 		
 		<script type="text/javascript">
 			// jQuery part
-			var protocol = window.location.protocol;
-		    var socket = io.connect(protocol + '//' + document.domain + ':' + location.port);
-
-		        /* 
-		            Event names ‘connect’, ‘disconnect’, ‘message’ and ‘json’ are special events generated by SocketIO.
-		            Any other event names are considered custom events.
-		        */
-		        // Socket behavior on event 'connect'
-		        socket.on('connect', function() {
-		        	socket.emit('event_chat_connect')
-		          // jQuery that searches for the first "MessagetobeSent" context
-		        })
-		        // Socket behavior on event 'event_chat_output'
-		        socket.on('event_chat_output', function( msg ) {
-		        remove_loading_bot()
-		          // Render the message on html page
-		          add_message_bot(msg.bot_message)
-		        })
-
-		        // Socket behavior on event 'event_chat_output_list'
-		        socket.on('event_chat_output_list', function (json){
-		        remove_loading_bot()
-		        	// Render the message by reading JSON file
-		        	add_message_bot_list(json)
-		        })
-
-				// Socket on disconnect behavior  
-				socket.on('disconnect', function( msg ) {
-		        	socket.emit('event_chat_disconnect')
-		        })
+		    var val_state = 2
+		    var val_classe = ''
+		    var val_name = ''
+		    var val_school = ''
+		    var val_school_infos = ''
 
 		        $("#send").click(function( e ) {
 		                // Prevents from submitting the form 
@@ -116,15 +77,35 @@
 		                let user_input = $("#messageToBeSent").val()
 		                // Prints message
 		                add_message_user(user_input)
-		                // Sends message as 'event_chat_input'
-		                socket.emit( 'event_chat_input', {
-		                  "bot_message"  : "",
-		                  "user_message" : user_input
-		                })
 		                $( '#messageToBeSent' ).val( '' ).focus()
 		                // Puts a loading icon from LIA
 						display_loading_bot()
-		            // }
+						json_response = {
+							response: user_input,
+							state: val_state,
+							name : val_name,
+							classe : val_classe,
+							school : val_school,
+							school_infos : val_school_infos }
+						// SECOND VERSION : GET METHOD
+						$.ajax({
+							type : "POST",
+							contentType: "application/json; charset=utf-8",
+  							url: "/post",
+  							data: JSON.stringify(json_response),
+  							success : function(lia_json) {
+								remove_loading_bot()
+								val_state = lia_json.state
+								val_name = lia_json.name
+								val_school = lia_json.school
+								val_classe = lia_json.classe
+								if(val_state == 22){
+									add_message_bot_list(lia_json.dict_school)
+								}
+								add_message_bot(lia_json.response)
+		                	},
+		                	dataType: "json"
+		                });
 		        })
 		        $("#messageToBeSent").keypress(function(e){
 		        	// Checks if Enter key has been entered :
@@ -135,16 +116,51 @@
 		                let user_input = $("#messageToBeSent").val()
 		                // Prints message
 		                add_message_user(user_input)
-		                // Sends message as 'event_chat_input'
-		                socket.emit( 'event_chat_input', {
-		                  "bot_message"  : "",
-		                  "user_message" : user_input
-		                })
 		                $( '#messageToBeSent' ).val( '' ).focus()
 		                // Puts a loading icon from LIA
-		                display_loading_bot()
+						display_loading_bot()
+						// SECOND VERSION : GET METHOD
+						$.get("/get", { msg: user_input , state: val_state }).done(function(data) {
+							remove_loading_bot()
+							if(data.state == 4){
+								add_message_bot_list(data.dict_school)
+							}
+							val_state = data.state
+		                	add_message_bot(data.bot_response)
+		                })
 		        	}
 		        })
+
+		        function return_element_number(element, elt_infos){
+					val_school = element
+					val_school_infos = elt_infos
+					console.log(element);
+					console.log(elt_infos);
+					display_loading_bot()
+						json_response = {
+							response: '',
+							state: val_state,
+							name : val_name,
+							classe : val_classe,
+							school : val_school,
+							school_infos : val_school_infos }
+						// SECOND VERSION : GET METHOD
+						$.ajax({
+							type : "POST",
+							contentType: "application/json; charset=utf-8",
+  							url: "/post",
+  							data: JSON.stringify(json_response),
+  							success : function(lia_json) {
+								remove_loading_bot()
+								val_state = lia_json.state
+								val_name = lia_json.name
+								val_school = lia_json.school
+								val_classe = lia_json.classe
+								add_message_bot(lia_json.response)
+		                	},
+		                	dataType: "json"
+		                });
+				}
 
 		</script>
 

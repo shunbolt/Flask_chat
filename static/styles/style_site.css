@@ -46,15 +46,6 @@ button.btn-outline-dark:hover {
   color: #FFF8F0;
 }
 
-/* ----- IFRAME ----- */
-button.btn-copy {
-  box-shadow: none;
-}
-
-iframe {
-  margin-top: 50px;
-}
-
 /* ----- NAVBAR ----- */
 nav.navbar, img.logo, a.nav-link, button.btn-top {
   transition: 0.4s;
@@ -152,8 +143,8 @@ nav.nav-collapsed a.nav-link {
 /* ----- RETOUR EN HAUT ----- */
 .btn-top {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 10px;
+  left: 7%;
   z-index: 99;
   background: linear-gradient(to bottom right, #DD762A, #CD411B);
 }
@@ -256,10 +247,5 @@ button.show {
 
   .navbar-light .navbar-nav .nav-link.active {
     color: #FFF8F0;
-  }
-
-  button.btn-top {
-    position: fixed;
-    right: 20px;
   }
 }
