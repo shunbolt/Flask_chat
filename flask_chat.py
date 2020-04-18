@@ -54,6 +54,10 @@ def chat_bot_post():
 
 # Helps easy debug by running python from command line
 if (__name__ == '__main__'):
+<<<<<<< HEAD
     # Multi process for production
     # app.run(threaded = True) 
     app.run(debug = True)  
+=======
+    app.run(processes = 2)
+>>>>>>> f2fb2d1d73ac30790bb60204faaae5854fb6e59b
