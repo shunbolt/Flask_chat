@@ -39,14 +39,42 @@ def find_school_in_city(schools, message):
 
 # ----------------------------fonctions servant à récupérer le nom de l'élève ------------------------------------------
 
-def retreive_name(message):
+"""def retreive_name(message):
     nlp = spacy.load('fr_core_news_sm')
     doc = nlp(message)
     name = ''
     for token in doc.ents:
         if token.label_ == "PER" or token.label_ == 'MISC':
             name += token.text
-    return name.title()
+    return name.title()"""
+
+def retreive_name(message):
+	df = pd.read_csv("Logic/Prenoms.csv", usecols=[0])
+    splitted = message.split(' ')
+    if len(splitted)<3:
+        return message.title()
+    nlp = spacy.load('fr_core_news_sm')
+    doc = nlp(message)
+    name = ''
+    if "m'appelle" in splitted:
+        i = splitted.index("m'appelle")
+        return ' '.join(splitted[i+1:]).title()
+    if "suis" in splitted:
+        i = splitted.index("suis")
+        return ' '.join(splitted[i+1:]).title()
+    if "est" in splitted:
+        i = splitted.index("est")
+        return ' '.join(splitted[i+1:]).title()
+    if len(doc.ents) > 0:
+        for token in doc.ents:
+            if token.label_ == "PER" or token.label_ == 'MISC':
+                name += token.text
+        return name.title()
+    for x in doc:
+        if x.text.lower() in list(df.prenom):
+            return x.text.title()
+    else:
+        return message.title()
 
 
 # ----------------------------fonction de validation -------------------------------------------------------------------
