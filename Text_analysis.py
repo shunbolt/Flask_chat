@@ -2,6 +2,7 @@ import spacy
 import pandas as pd
 from difflib import SequenceMatcher
 import re
+import unidecode
 
 
 # ----------------------------boîte à outils ---------------------------------------------------------------------------
@@ -75,7 +76,21 @@ def retreive_name(message):
             return x.text.title()
     else:
         return message.title()
+# ----------------------------fonction servant à trouver la classe de l'élève ------------------------------------------
 
+def find_class_name(message):
+    message = unidecode.unidecode(message)
+    a=0 
+    
+    for w in message.split(' '):
+        for cl in ["sixieme", "cinquieme", "quatrieme", "troisieme", "seconde", "premiere", "terminale"]:
+            if w.lower() == cl:
+                return ' '.join(message.split(' ')[message.split(' ').index(w):])
+            
+    for c in message:
+        if c.isnumeric():
+            return message[a:]
+        a += 1
 
 # ----------------------------fonction de validation -------------------------------------------------------------------
 

@@ -105,7 +105,7 @@ class State:
             # tmp = input("entre le numéro de ton école dans cette liste s'il te plaît ")
             # set_school(schools[int(tmp)][1])
         elif self.f == "classe":
-            set_classe(self.ans)
+            set_classe(Text_analysis.find_class_name(self.ans))
         # elif self.f == "profiling":
         #    self.profiling()
 
