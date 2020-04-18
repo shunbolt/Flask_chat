@@ -23,7 +23,7 @@ def index():
 # route towards the chatbot
 @app.route('/chatbot')
 def chat():
-    
+
     return render_template('chat.html')
 
 # route towards legal mentions
@@ -54,4 +54,4 @@ def chat_bot_post():
 
 # Helps easy debug by running python from command line
 if (__name__ == '__main__'):
-    app.run(threaded = True, debug=True)
+    app.run(threaded = True, debug=True, processes = 3)
