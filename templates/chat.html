@@ -120,14 +120,24 @@
 		                // Puts a loading icon from LIA
 						display_loading_bot()
 						// SECOND VERSION : GET METHOD
-						$.get("/get", { msg: user_input , state: val_state }).done(function(data) {
-							remove_loading_bot()
-							if(data.state == 4){
-								add_message_bot_list(data.dict_school)
-							}
-							val_state = data.state
-		                	add_message_bot(data.bot_response)
-		                })
+						$.ajax({
+							type : "POST",
+							contentType: "application/json; charset=utf-8",
+  							url: "/post",
+  							data: JSON.stringify(json_response),
+  							success : function(lia_json) {
+								remove_loading_bot()
+								val_state = lia_json.state
+								val_name = lia_json.name
+								val_school = lia_json.school
+								val_classe = lia_json.classe
+								if(val_state == 22){
+									add_message_bot_list(lia_json.dict_school)
+								}
+								add_message_bot(lia_json.response)
+		                	},
+		                	dataType: "json"
+		                });
 		        	}
 		        })
 

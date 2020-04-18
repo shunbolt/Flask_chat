@@ -48,7 +48,6 @@ def chat_bot_post():
 
     print(user_json)
     res = LIA_response(user_json)
-    time.sleep(2)
     return res
 
 # Helps easy debug by running python from command line
