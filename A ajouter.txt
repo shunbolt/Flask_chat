@@ -1,4 +1,18 @@
-à Ajouter :
+Colonnes
 
-... Pour le loading du message ? 
-Couleurs dynamiques (Orange) ? 
+Id : auto-increment
+nom : done
+prenom : done
+age : non demandé
+classe : done
+etablissement : done
+ville : done
+code_postal : done (implicit)
+academie : done
+role : non demandé
+date_time : a traiter
+nom_harceleur : a traiter
+prenom_harceleur : a traiter
+discussion : a traiter
+categorie_cas : non demandé
+

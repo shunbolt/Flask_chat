@@ -69,6 +69,10 @@
 		    var val_name = ''
 		    var val_school = ''
 		    var val_school_infos = ''
+			// A ajouter dans le cycle
+			var val_harc_name = ''
+			var val_discussion = '' 
+
 
 		        $("#send").click(function( e ) {
 		                // Prevents from submitting the form 
@@ -86,7 +90,10 @@
 							name : val_name,
 							classe : val_classe,
 							school : val_school,
-							school_infos : val_school_infos }
+							school_infos : val_school_infos,
+							discussion : val_discussion, 
+							harc_name : val_harc_name,
+						}
 						// SECOND VERSION : GET METHOD
 						$.ajax({
 							type : "POST",

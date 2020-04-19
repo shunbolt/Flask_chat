@@ -47,14 +47,12 @@ def chat_bot_post():
     #    'school': school,
     #}
     user_json = request.get_json()
-
     print(user_json)
     res = LIA_response(user_json)
     return res
 
 # Helps easy debug by running python from command line
 if (__name__ == '__main__'):
-
     # Multi process for production
     # app.run(threaded = True) 
     app.run(debug = True)  

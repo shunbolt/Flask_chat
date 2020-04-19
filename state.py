@@ -39,7 +39,6 @@ captions = {
 }
 
 name = ''
-school = ''
 classe = ''
 school_list = []
 
@@ -47,14 +46,9 @@ def set_classe(tmp):
     global classe
     classe = tmp
 
-
 def set_name(tmp):
     global name
     name = tmp
-
-def set_school(tmp):
-    global school
-    school = tmp
 
 def set_list(tmp):
     global school_list
@@ -154,8 +148,6 @@ class State:
         # Collect parameters if found during analysis
         if name:
             response_json['name'] = name
-        if school:
-            response_json['school'] = school
         if classe:
             response_json['classe'] = classe
         response_json['dict_school'] = self.schools_to_dict_top3()
