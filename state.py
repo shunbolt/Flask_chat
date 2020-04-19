@@ -40,6 +40,7 @@ captions = {
 }
 
 name = ''
+hname = ''
 classe = ''
 school_list = []
 
@@ -55,6 +56,9 @@ def set_list(tmp):
     global school_list
     school_list = tmp
 
+def set_hname(tmp):
+    global hname
+    hname = tmp
 
 class State:
     def __init__(self, statenb, caption, possible_next_states, TA_function, input=True):
@@ -99,6 +103,8 @@ class State:
             # print(schools)
             # tmp = input("entre le numéro de ton école dans cette liste s'il te plaît ")
             # set_school(schools[int(tmp)][1])
+        elif self.f == "hname":
+            set_hname(Text_analysis.retreive_name(self.ans))
         elif self.f == "classe":
             set_classe(Text_analysis.find_class_name(self.ans))
         # elif self.f == "profiling":
@@ -133,7 +139,19 @@ class State:
 
 
     def execute(self, user_json):
-        # Process answer from user
+        #Json Structure received :
+        #json_response = {
+        #    response: user_input, (replaced by bot response)
+        #    state: val_state, (analysis)
+        #    name : val_name, (analysis)
+        #    classe : val_classe, (analysis)
+        #    school : val_school, (chosen in client)
+        #    school_adr : val_school_adr,
+        #    school_code : val_school_code,
+        #    school_city : val_school_city,
+        #    discussion : val_discussion, (append)
+        #    harc_name : val_harc_name, (analysis)
+        #}
 
         print(user_json.get('response'))
         if self.next != "END":
@@ -148,9 +166,18 @@ class State:
 
         # Collect parameters if found during analysis
         if name:
+            # If new name found, insert it
             response_json['name'] = name
         if classe:
+            # Same for class
             response_json['classe'] = classe
+        if hname:
+            # If new name found, insert it
+            response_json['harc_name'] = hname
+
+        # Append answer to discussion    
+        response_json['discussion'] = response_json['discussion'] + "- " + user_json.get('response') + " "
+        # Generte list of schools when necessary
         response_json['dict_school'] = self.schools_to_dict_top3()
 
         print(response_json['dict_school'])
@@ -164,6 +191,7 @@ class State:
 
         # Update new state
         response_json['state'] = self.next
+
         if self.next == 21: #si le dernier état est atteint, on rentre les infos dans la bdd.
             mydb = mysql.connector.connect(
               host="localhost",
@@ -174,8 +202,8 @@ class State:
             )
 
             mycursor = mydb.cursor()
-            sql = "INSERT INTO fiche_recap_victime (nom, etablissement) VALUES (%s, %s)"
-            val = (response_json['name'], response_json['school'])
+            sql = "INSERT INTO fiche_recap_victime (nom, classe, etablissement, ville, code_postal, nom_harceleur, discussion) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+            val = (response_json['name'], response_json['classe'],response_json['school'], response_json['school_city'], response_json['school_code'], response_json['harc_name'], response_json['discussion'])
             mycursor.execute(sql, val)
             mydb.commit()
             print(mycursor.rowcount, "record inserted.")
@@ -205,7 +233,7 @@ S15 = State(15, captions.get("S15"), 16, "none")
 S16 = State(16, captions.get("S16"), 17, "none")
 S17 = State(17, captions.get("S17"), 18, "none")
 S18 = State(18, captions.get("S18"), 19, "none")
-S19 = State(19, captions.get("S19"), 20, "none")
+S19 = State(19, captions.get("S19"), 20, "hname")
 # Fin de bloc
 S20 = State(20, captions.get("S20"), 21, "none")
 S21 = State(21, captions.get("S21"), 21, "none", input=False)

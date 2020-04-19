@@ -85,9 +85,9 @@ function add_message_bot_list(json){
     var school3 = json.school3.name + ' - ' + json.school3.street +  ' - ' + json.school3.code + ' - ' + json.school3.city
 
     msg_bot ="<ol>" +
-    "<li>" + "<a onClick=\"return_element_number(\'"+ json.school1.name + "\',\'" + school1 + "\');\" >" + school1 + "</a>" + "</li>" +
-    "<li>" + "<a onClick=\"return_element_number(\'"+ json.school2.name + "\',\'" + school2 + "\');\" >" + school2 + "</a>" + "</li>" +
-    "<li>" + "<a onClick=\"return_element_number(\'"+ json.school3.name + "\',\'" + school3 + "\');\" >" + school3 + "</a>" + "</li>" +
+    "<li>" + "<a onClick=\"return_element_number(\'"+ json.school1.name + "\',\'" + json.school1.street + "\',\'" + json.school1.code + "\',\'" + json.school1.city + "\');\" >" + school1 + "</a>" + "</li>" +
+    "<li>" + "<a onClick=\"return_element_number(\'"+ json.school2.name + "\',\'" + json.school2.street + "\',\'" + json.school2.code + "\',\'" + json.school2.city + "\');\" >" + school2 + "</a>" + "</li>" +
+    "<li>" + "<a onClick=\"return_element_number(\'"+ json.school3.name + "\',\'" + json.school3.street + "\',\'" + json.school3.code + "\',\'" + json.school3.city + "\');\" >" + school3 + "</a>" + "</li>" +
     "</ol>";
     console.log(msg_bot)
     finalString = messageStringLia.replace("XXXXX",msg_bot)
