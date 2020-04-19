@@ -166,7 +166,7 @@ class State:
         response_json['state'] = self.next
         if self.next == 21: #si le dernier état est atteint, on rentre les infos dans la bdd.
             mydb = mysql.connector.connect(
-              host="localhost",
+              host="127.0.0.1",
               user="gandi",
               passwd="1234",
               database="bdd_lia"
