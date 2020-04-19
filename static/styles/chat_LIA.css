@@ -93,6 +93,7 @@ body {
   color: #FFF;
   padding: 10px;
   position: relative;
+  font-size: 12px;
 }
 
 textarea.form-control::placeholder {

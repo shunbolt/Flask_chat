@@ -35,11 +35,11 @@ name=<!DOCTYPE html>
   </button>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light nav-expended fixed-top linear-gradient" id="nav">
-    <div class="offset-2 col-8 d-flex bd-highlight" id="navbar">
+  <nav class="navbar navbar-expand-lg navbar-light nav-expended fixed-top linear-gradient">
+    <div class="div-nav offset-2 col-8 d-flex bd-highlight">
       <div class="mr-auto bd-highlight">
         <a class="top logo" href="/">
-          <img src="{{ url_for('static', filename = 'images/logos/logoLIA_vg_C.png')}}" class="logo d-inline-block align-center" alt="Logo LIA"></a>
+          <img src="{{url_for('static', filename = 'images/logos/logoLIA_vg_C.png')}}" class="logo d-inline-block align-center" alt="Logo LIA"></a>
       </div>
       <div class="navbar-menu bd-highlight align-self-center">
 
@@ -47,24 +47,24 @@ name=<!DOCTYPE html>
         <div class="collapse navbar-collapse" id="navbarToggler">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="index.html#projet">Projet</a>
+              <a class="nav-link" href="/#projet">Projet</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#equipe">Equipe</a>
+              <a class="nav-link" href="/#equipe">Equipe</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#partenaires">Partenaires</a>
+              <a class="nav-link" href="/#partenaires">Partenaires</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#integration">Intégration</a>
+              <a class="nav-link" href="/#integration">Intégration</a>
             </li>
           </ul>
         </div>
-      </div>
 
-      <button class="btn navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-        <i id="rotatable" class="fas fa-bars"></i>
-      </button>
+        <button class="btn navbar-toggler align-self-center" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+          <i id="rotatable" class="fas fa-bars"></i>
+        </button>
+      </div>
     </div>
   </nav>
 

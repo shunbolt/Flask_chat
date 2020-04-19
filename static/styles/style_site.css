@@ -47,6 +47,7 @@ button.btn-outline-dark:hover {
 }
 
 /* ----- NAVBAR ----- */
+
 nav.navbar, img.logo, a.nav-link, button.btn-top {
   transition: 0.4s;
 }
@@ -153,16 +154,26 @@ nav.nav-collapsed a.nav-link {
   box-shadow: 0 0 0 .2rem #DD762A;
 }
 
-button.hide {
-  display: none;
-}
-
-button.show {
-  display: block;
-}
-
 .btn.focus, .btn:focus {
   box-shadow: none;
+}
+
+/* ----- PARLEZ A LIA ----- */
+.btn-to-chat{
+  position: fixed;
+  bottom: 10px;
+  margin-left: 4%;
+  margin-right: 4%;
+  z-index: 99;
+  transition: 0.4s;
+  background: linear-gradient(to bottom right, #DD762A, #CD411B);
+}
+
+.btn-to-chat.focus, .btn-to-chat:focus {
+  box-shadow: 0 0 0 .2rem #DD762A;
+}
+.video{
+  max-width: 98%;
 }
 
 /* ----- BACKGROUND ----- */

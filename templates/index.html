@@ -34,9 +34,16 @@
   <div class="bg bg3"></div>
 
   <!-- Bouton pour retourner en haut -->
-  <button type="button" class="btn btn-top hide" title="Retourner en haut">
+  <button type="button" class="btn btn-top" title="Retourner en haut">
     <i class="fas fa-arrow-up" alt="Retourner en haut"></i>
   </button>
+
+  <!-- Bouton pour discuter avec LIA -->
+
+
+  <a class="btn btn-to-chat col-11" href="/chatbot" title="Cliquez ici pour parler avec LIA">
+    <span>Cliquez ici pour parler avec LIA</span>
+  </a>
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light nav-expended fixed-top linear-gradient">
@@ -86,7 +93,9 @@
 
       <!-- Video -->
       <div class="row justify-content-center">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/RYjfe8OSRFw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="col-12 m-auto">
+          <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/rUcoWD9pR30" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
 
@@ -225,20 +234,20 @@
     </div>
 
     <!-- Remerciements -->
-    <div class="envlp" id="integration">
+    <div class="envlp">
       <div class="row justify-content-center">
-        <h2>Nos remerciments</h2>
+        <h2>Nos remerciements</h2>
       </div>
       <div class="row">
         <div class="col-10 m-auto">
           <p class="corps" data-aos="fade-up">
-            Nous tenions à remercier Mona Ginet pour le logo, Vinodha Balane pour avoir prêté sa voix dans la vidéo de présentation et enfin
-            Andreas Topp et Benoît Charroux pour leurs précieux conseils.</p>
+            Nous tenions à remercier Mona Ginet pour le logo, Vinodha Balane pour avoir prêté sa voix dans la vidéo de présentation, Matthieu Gédéon pour les supports visuels et enfin
+            Andreas Topp et Benoît Charroux pour leurs précieux conseils lors du développement.</p>
         </div>
       </div>
     </div>
 
-
+    <!-- iframe -->
     <div id="window">
       <div id="title_bar" class="d-flex justify-content-between">
         <div class="img_cont_banner">
@@ -254,7 +263,7 @@
         </div>
       </div>
       <div id="box">
-        <iframe id="inline_frame" src= '/chatbot' frameBorder="0"></iframe>
+        <iframe id="inline_frame" src='/chatbot' frameBorder="0"></iframe>
       </div>
     </div>
 
