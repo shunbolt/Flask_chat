@@ -16,7 +16,7 @@ captions = {
     "S9": "Es-tu prêt à répondre à des questions plus précises ?",
     "S10": "Ok FIRST_NAME, quand est-ce que tes ennuis ont commencés ?",
     "S11": "C'est noté. On va te poser une petite série de questions: "
-           "je t'invite à répondre librement à chacune d'entre"
+           "je t'invite à répondre librement à chacune d'entre "
            "elles. N'hésites pas à donner plus de détails si possible. Cela me permettra de mieux "
            "comprendre ta situation. Est-ce que ça va pour l'instant?",
     "S12": "Ok FIRST_NAME, est-ce que quelqu'un t'as frappé ? Si c'est le cas tu peux développer...",
