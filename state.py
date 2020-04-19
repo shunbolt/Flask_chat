@@ -1,4 +1,5 @@
 import Text_analysis
+import mysql.connector
 
 captions = {
     "S1": "Salut, moi c'est Lia, je suis un robot qui a été conçu dans le but de venir en aide aux élèves victimes de "
@@ -163,6 +164,19 @@ class State:
 
         # Update new state
         response_json['state'] = self.next
+        if self.next == 21: #si le dernier état est atteint, on rentre les infos dans la bdd.
+            mydb = mysql.connector.connect(
+              host="localhost",
+              user="gandi",
+              passwd="1234",
+              database="bdd_lia"
+            )
+
+            mycursor = mydb.cursor()
+            sql = "INSERT INTO fiche_recap_harcelement (nom, etablissement) VALUES (%s, %s)"
+            val = (response_json['name'], response_json['school'])
+            mycursor.execute(sql, val)
+
         return response_json
 
 
