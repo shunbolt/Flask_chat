@@ -44,7 +44,17 @@
 								<img src="{{url_for('static', filename = 'images/logos/iconLIA_rond.png')}}" class="bot_img_msg">
 							</div>
 							<div class="msg_container">
-								Avant de commencer, peux-tu me donner le nom de la personne qui subit le harcèlement ? Si c'est toi,
+								Pour l'instant, je ne peux pas encore te venir en aide, je travaille d'arrache-pied pour ça. Si tu subis un harcèlement à l'école je te conseille de parler avec
+								l'association HUGO sur instagram : <a href="https://www.instagram.com/asso_hugo/" target="_blank">@asso_hugo</a>.<br>
+								Mais tu peux quand même parler avec moi si cela t'intéresse.
+							</div>
+						</div>
+						<div class="d-flex justify-content-start mb-4">
+							<div class="img_cont_msg">
+								<img src="{{url_for('static', filename = 'images/logos/iconLIA_rond.png')}}" class="bot_img_msg">
+							</div>
+							<div class="msg_container">
+								Si tu veux, tu peux me donner le nom de la personne qui subit le harcèlement ? Si c'est toi,
 								tu peux me donner ton nom.
 							</div>
 						</div>
@@ -68,7 +78,9 @@
 		    var val_classe = ''
 		    var val_name = ''
 		    var val_school = ''
-		    var val_school_infos = ''
+		    var val_school_adr = ''
+		    var val_school_code = ''
+		    var val_school_city = ''
 			// A ajouter dans le cycle
 			var val_harc_name = ''
 			var val_discussion = '' 
@@ -90,7 +102,9 @@
 							name : val_name,
 							classe : val_classe,
 							school : val_school,
-							school_infos : val_school_infos,
+							school_adr : val_school_adr,
+		    				school_code : val_school_code,
+		    				school_city : val_school_city,
 							discussion : val_discussion, 
 							harc_name : val_harc_name,
 						}
@@ -104,8 +118,9 @@
 								remove_loading_bot()
 								val_state = lia_json.state
 								val_name = lia_json.name
-								val_school = lia_json.school
 								val_classe = lia_json.classe
+								val_harc_name = lia_json.harc_name
+								val_discussion = lia_json.discussion
 								if(val_state == 22){
 									add_message_bot_list(lia_json.dict_school)
 								}
@@ -133,7 +148,12 @@
 							name : val_name,
 							classe : val_classe,
 							school : val_school,
-							school_infos : val_school_infos }
+							school_adr : val_school_adr,
+		    				school_code : val_school_code,
+		    				school_city : val_school_city,
+							discussion : val_discussion, 
+							harc_name : val_harc_name,
+						}
 						$.ajax({
 							type : "POST",
 							contentType: "application/json; charset=utf-8",
@@ -143,8 +163,9 @@
 								remove_loading_bot()
 								val_state = lia_json.state
 								val_name = lia_json.name
-								val_school = lia_json.school
 								val_classe = lia_json.classe
+								val_harc_name = lia_json.harc_name
+								val_discussion = lia_json.discussion
 								if(val_state == 22){
 									add_message_bot_list(lia_json.dict_school)
 								}
@@ -155,11 +176,12 @@
 		        	}
 		        })
 
-		        function return_element_number(element, elt_infos){
+		        function return_element_number(element, elt_adr, elt_code, elt_city){
 					val_school = element
-					val_school_infos = elt_infos
+					val_school_adr = elt_adr
+		    		val_school_code = elt_code
+		    		val_school_city = elt_city
 					console.log(element);
-					console.log(elt_infos);
 					display_loading_bot()
 						json_response = {
 							response: '',
@@ -167,7 +189,12 @@
 							name : val_name,
 							classe : val_classe,
 							school : val_school,
-							school_infos : val_school_infos }
+							school_adr : val_school_adr,
+		    				school_code : val_school_code,
+		    				school_city : val_school_city,
+							discussion : val_discussion, 
+							harc_name : val_harc_name,
+						}
 						// SECOND VERSION : GET METHOD
 						$.ajax({
 							type : "POST",
@@ -178,8 +205,12 @@
 								remove_loading_bot()
 								val_state = lia_json.state
 								val_name = lia_json.name
-								val_school = lia_json.school
 								val_classe = lia_json.classe
+								val_harc_name = lia_json.harc_name
+								val_discussion = lia_json.discussion
+								if(val_state == 22){
+									add_message_bot_list(lia_json.dict_school)
+								}
 								add_message_bot(lia_json.response)
 		                	},
 		                	dataType: "json"

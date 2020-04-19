@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b76d158-d951-4a8e-bcfa-369823f7e683" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Flask_chat.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Flask Chat.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/script/script_site.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/script/script_site.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A ajouter.txt" beforeDir="false" afterPath="$PROJECT_DIR$/A ajouter.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask_chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask_chat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/state.py" beforeDir="false" afterPath="$PROJECT_DIR$/state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/script/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/script/chat.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/styles/chat_LIA.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/chat_LIA.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/styles/style_site.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/style_site.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chat.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/mentions_legales.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/mentions_legales.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +47,7 @@
       <updated>1587292173329</updated>
       <workItem from="1587292174815" duration="1168000" />
       <workItem from="1587293374320" duration="11203000" />
+      <workItem from="1587312704164" duration="3643000" />
     </task>
     <servers />
   </component>
@@ -67,10 +63,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="0" key="SettingsEditor/0.0.1280.680/460.1080.1000.504@0.0.1280.680" timestamp="1587292709511" />
-    <state x="349" y="169" key="com.intellij.ide.util.TipDialog" timestamp="1587293405149">
+    <state x="349" y="169" key="com.intellij.ide.util.TipDialog" timestamp="1587312709602">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="349" y="169" key="com.intellij.ide.util.TipDialog/0.0.1280.680/460.1080.1000.504@0.0.1280.680" timestamp="1587293405149" />
+    <state x="349" y="169" key="com.intellij.ide.util.TipDialog/0.0.1280.680/460.1080.1000.504@0.0.1280.680" timestamp="1587312709602" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1587292520379">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

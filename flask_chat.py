@@ -39,12 +39,15 @@ def contact():
 @app.route('/post', methods = ['POST'])
 def chat_bot_post():
     # Json Structure received :
-    #{
-    #    'response': user_input,
-    #    'state': val_state,
-    #    'name': name,
-    #    'classe': classe,
-    #    'school': school,
+    #json_response = {
+    #    response: user_input,
+    #    state: val_state,
+    #    name : val_name,
+    #    classe : val_classe,
+    #    school : val_school,
+    #    school_infos : val_school_infos,
+    #    discussion : val_discussion, 
+    #    harc_name : val_harc_name,
     #}
     user_json = request.get_json()
     print(user_json)
