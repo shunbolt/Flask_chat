@@ -166,16 +166,20 @@ class State:
         response_json['state'] = self.next
         if self.next == 21: #si le dernier état est atteint, on rentre les infos dans la bdd.
             mydb = mysql.connector.connect(
-              host="127.0.0.1",
-              user="gandi",
-              passwd="1234",
+              host="localhost",
+              unix_socket="/srv/run/mysqld/mysqld.sock",
+              user="root",
+              passwd="",
               database="bdd_lia"
             )
 
             mycursor = mydb.cursor()
-            sql = "INSERT INTO fiche_recap_harcelement (nom, etablissement) VALUES (%s, %s)"
+            sql = "INSERT INTO fiche_recap_victime (nom, etablissement) VALUES (%s, %s)"
             val = (response_json['name'], response_json['school'])
             mycursor.execute(sql, val)
+            mydb.commit()
+            print(mycursor.rowcount, "record inserted.")
+
 
         return response_json
 
