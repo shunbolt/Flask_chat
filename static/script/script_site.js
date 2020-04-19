@@ -1,30 +1,14 @@
 // Init des animations sur le texte quand on scroll
 AOS.init();
 
-// Agrangir ou retrecir la navbar
-$(window).on('scroll', function() {
-  if ($(window).scrollTop() > 60) {
-    $('.navbar').removeClass('nav-expended').addClass('nav-collapsed')
-  } else {
-    $('.navbar').removeClass('nav-collapsed').addClass('nav-expended')
-  }
-})
-
-// Montrer ou acher le bouton pour remonter en haut
-$(window).on('scroll', function() {
-  if ($(window).scrollTop() > 300) {
-    $('.btn-top').removeClass('hide').addClass('show')
-  } else {
-    $('.btn-top').removeClass('show').addClass('hide')
-  }
-})
-
 $(window).scroll(function() {
   if ($(window).scrollTop() + $(window).height() > $(document).height() - 80) {
-    $('#window').css('bottom', '90px')
-    $('.btn-top').css('bottom', '90px')
+    $('#window').css('bottom', '9%')
+    $('.btn-to-chat').css('bottom', '15%')
+    $('.btn-top').css('bottom', '9%')
   } else {
     $('#window').css('bottom', '10px')
+    $('.btn-to-chat').css('bottom', '10px')
     $('.btn-top').css('bottom', '10px')
   }
 })
@@ -35,49 +19,54 @@ $('.btn-top').on('click', function() {
 })
 
 // Ajustement mobiles
-function mobileViewUpdate() {
-  if ($(window).width() <= 991) {
-    $('.btn-top').hide()
-    $('.container').removeClass('col-8').addClass('col-12')
-    $('.div-nav').removeClass('offset-2 col-8').addClass('col-12')
-    $('#window').width('100%').css('right', '0px')
-    $('#window').css('bottom', '0px')
+if ($(window).width() <= 991) {
 
-    $(window).scroll(function() {
-      if ($(window).scrollTop() + $(window).height() > $(document).height() - 80) {
-        $('#window').css('bottom', '100px')
-      } else {
-        $('#window').css('bottom', '0px')
-      }
-    })
-  } else {
-    $('.btn-top').show()
-    $('.container').removeClass('col-12').addClass('col-8')
-    $('.div-nav').removeClass('col-12').addClass('offset-2 col-8')
-    $('#window').width('350px').css('right', '10px')
-    $('#window').css('bottom', '10px')
+  $('.btn-top').hide()
+  $('.btn-to-chat').show()
+  $('#window').hide()
 
-    $(window).scroll(function() {
-      if ($(window).scrollTop() + $(window).height() > $(document).height() - 80) {
-        $('#window').css('bottom', '90px')
-        $('.btn-top').css('bottom', '90px')
-      } else {
-        $('#window').css('bottom', '10px')
-        $('.btn-top').css('bottom', '10px')
-      }
-    })
-  }
-}
-$(window).resize(mobileViewUpdate);
+  $('.container').removeClass('col-8').addClass('col-12')
+  $('.div-nav').removeClass('offset-2 col-8').addClass('col-12')
 
-// Minimiser ou maximiser la fenêtre chatbot
-$(document).ready(function() {
-  $("#min_max_button").click(function() {
-    if ($('#icon-toggle').hasClass('fa-window-minimize')) {
-      $('#icon-toggle').toggleClass('fa-window-minimize', false).toggleClass('fa-window-maximize');
+  $('[data-aos]').removeAttr('data-aos')
+
+  $('#video').css('width', '98%')
+
+} else {
+
+  $('.btn-top').show()
+  $('.btn-to-chat').hide()
+  $('#window').show()
+  $('.container').removeClass('col-12').addClass('col-8')
+  $('.div-nav').removeClass('col-12').addClass('offset-2 col-8')
+
+  // Montrer ou cacher le bouton pour remonter en haut
+  $(window).on('scroll', function() {
+    if ($(window).scrollTop() > 300) {
+      $('.btn-top').css('display', 'block')
     } else {
-      $('#icon-toggle').toggleClass('fa-window-maximize', false).toggleClass('fa-window-minimize');
+      $('.btn-top').css('display', 'none')
     }
-    $('#box').slideToggle();
+  })
+
+  // Agrangir ou retrecir la navbar
+  $(window).on('scroll', function() {
+    if ($(window).scrollTop() > 60) {
+      $('.navbar').removeClass('nav-expended').addClass('nav-collapsed')
+    } else {
+      $('.navbar').removeClass('nav-collapsed').addClass('nav-expended')
+    }
+  })
+
+  // Minimiser ou maximiser la fenêtre chatbot
+  $(document).ready(function() {
+    $("#min_max_button").click(function() {
+      if ($('#icon-toggle').hasClass('fa-window-minimize')) {
+        $('#icon-toggle').toggleClass('fa-window-minimize', false).toggleClass('fa-window-maximize');
+      } else {
+        $('#icon-toggle').toggleClass('fa-window-maximize', false).toggleClass('fa-window-minimize');
+      }
+      $('#box').slideToggle();
+    });
   });
-});
+}
