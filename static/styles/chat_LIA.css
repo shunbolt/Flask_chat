@@ -115,6 +115,7 @@ textarea.form-control::placeholder {
   color: #FFFFFF;
   padding: 10px;
   position: relative;
+  font-size: 12px;
 }
 
 .img_loading {
