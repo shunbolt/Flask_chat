@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1b76d158-d951-4a8e-bcfa-369823f7e683" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A ajouter.txt" beforeDir="false" afterPath="$PROJECT_DIR$/A ajouter.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask_chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask_chat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/state.py" beforeDir="false" afterPath="$PROJECT_DIR$/state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/script/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/script/chat.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/styles/chat_LIA.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/chat_LIA.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +42,8 @@
       <updated>1587292173329</updated>
       <workItem from="1587292174815" duration="1168000" />
       <workItem from="1587293374320" duration="11203000" />
-      <workItem from="1587312704164" duration="3643000" />
+      <workItem from="1587312704164" duration="4001000" />
+      <workItem from="1587472522932" duration="558000" />
     </task>
     <servers />
   </component>
